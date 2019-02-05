@@ -14,7 +14,7 @@
 
 ## General info
 ---
-PasswordLocker as the name suggests is an application that enables users list and preview news articles from various sources.   .
+News Hightlight as the name suggests is an application that enables users list and preview news articles from various sources.   .
 
 The application allows the user to:
 
