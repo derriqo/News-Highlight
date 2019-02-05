@@ -11,7 +11,7 @@ def index():
     '''
     inside = get_sources('general')
     word = 'Welcome to News'
-    return render_template('index.html', word=word, inside=insde )
+    return render_template('index.html', word=word, inside=inside )
 
 # @app.route('/articles/<id>')
 # def articles(id)
