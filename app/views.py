@@ -10,20 +10,20 @@ def index():
     View root page function that returns the index page and its data
     '''
     inside = get_sources('general')
-    # world_sources = get_sources('world')
-    # top_sources = get_sources('top')
-
+    business_sources = get_sources('business')
+    technology_sources = get_sources('technology')
+    entertainment_sources = get_sources('entertainment')
 
     word = 'Welcome to News'
-    return render_template('index.html', word=word, general = inside)
+    return render_template('index.html', word=word, inside = inside ,business_sources = business_sources, technology_sources = technology_sources, entertainment_sources=entertainment_sources)
 
-# @app.route('/articles/<id>')
-# def articles(id)
-#     '''
-#     Shows Articles.
-#     '''
-#     story = get_articles(id)
+@app.route('/articles/<id>')
+def articles(id):
+    '''
+    Shows Articles.
+    '''
+    story = get_articles(id)
 
-#     title = 'In the Top Story'
+    title = 'News Articles'
 
-#     return render_template('articles.html',title = title, story = story)
+    return render_template('articles.html',title = title, story = story)

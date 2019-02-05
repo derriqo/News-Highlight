@@ -46,11 +46,11 @@ def process_results(source_list):
     for source_item in source_list:
         id = source_item.get('id')
         name = source_item.get('name')
-        title = title_item.get('title')
-        description = description_item.get('description')
+        title = source_item.get('title')
+        description = source_item.get('description')
+        url=source_item.get('url')
 
-
-        source_object = Source(id,name.title,description)
+        source_object = Source(id,name,title,description,url)
         source_results.append(source_object)
 
     return source_results
