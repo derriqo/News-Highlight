@@ -4,19 +4,23 @@ from .models import source
 
 Source = source.Source
 
+api_key = None
+base_url = None
+articles_url = None
+
 # Getting api key 
 api_key = app.config['SOURCE_API_KEY']
 
 #Getting the source base url
-base_url = app.config["SOURCE_API_BASE_URL"]
+base_url = app.config["SOURCE_API_URL"]
 
 
-def get_sources(category):
+def get_sources(name):
     '''
     Function that gets the json response to our url request
     '''
 
-    get_sources_url = base_url.format(category,api_key)
+    get_sources_url = base_url.format(name,api_key)
 
 
     with urllib.request.urlopen(get_sources_url) as url:
