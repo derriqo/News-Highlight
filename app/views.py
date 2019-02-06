@@ -24,7 +24,6 @@ def articles(id):
     Shows Articles.
     '''
     story = get_articles(id)
-
     title = 'News Articles'
 
     return render_template('articles.html',title = title, story = story)
