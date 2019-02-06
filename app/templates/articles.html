@@ -8,5 +8,13 @@
 </head>
 <body>
     <h1>{{title}}</h1>
+    <div class="col-md-03">
+            <h3> Business News</h3>
+            <ul>
+                {% for i in  business_sources  %}
+                <li><a href="{{i.url}}">{{i.name}}</a></li>
+                {% endfor %}
+            </ul>   
+        </div>
 </body>
 </html>

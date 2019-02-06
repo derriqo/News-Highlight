@@ -18,13 +18,13 @@ def index():
     word = 'Welcome to News'
     return render_template('index.html', word=word, inside = inside ,business_sources = business_sources, technology_sources = technology_sources, entertainment_sources=entertainment_sources, health_sources=health_sources)
 
-# @app.route('/articles/<id>')
-# def articles(id):
-#     '''
-#     Shows Articles.
-#     '''
-#     story = get_articles(id)
+@app.route('/articles/<id>')
+def articles(id):
+    '''
+    Shows Articles.
+    '''
+    story = get_articles(id)
 
-#     title = 'News Articles'
+    title = 'News Articles'
 
-#     return render_template('articles.html',title = title, story = story)
+    return render_template('articles.html',title = title, story = story)
