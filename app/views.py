@@ -13,9 +13,10 @@ def index():
     business_sources = get_sources('business')
     technology_sources = get_sources('technology')
     entertainment_sources = get_sources('entertainment')
+    health_sources = get_sources('health')
 
     word = 'Welcome to News'
-    return render_template('index.html', word=word, inside = inside ,business_sources = business_sources, technology_sources = technology_sources, entertainment_sources=entertainment_sources)
+    return render_template('index.html', word=word, inside = inside ,business_sources = business_sources, technology_sources = technology_sources, entertainment_sources=entertainment_sources, health_sources=health_sources)
 
 # @app.route('/articles/<id>')
 # def articles(id):
