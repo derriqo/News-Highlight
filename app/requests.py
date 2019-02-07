@@ -1,22 +1,18 @@
-from app import app
 import urllib.request,json
-from .models import source
+from .models import Source,Articles
 
-Source = source.Source
-Articles = source.Articles
+# Source = source.Source
+# Articles = source.Articles
 
 api_key = None
 base_url = None
 articles_url = None
 
-# Getting api key 
-api_key = app.config['SOURCE_API_KEY']
-
-#Getting the source base url
-base_url = app.config["SOURCE_API_URL"]
-
-#Getting the articles base url
-articles_url = app.config['ARTICLES_BASE_URL']
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['SOURCE_API_KEY']
+    base_url = app.config["SOURCE_API_URL"]
+    articles_url = app.config['ARTICLES_BASE_URL']
 
 def get_sources(category):
     '''
@@ -61,13 +57,13 @@ def get_articles(id):
     Function that gets the json response to our url request
     '''
 
-    get_articles_url = articles_url.format(id, api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id, api_key)
 
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
 
-        print(get_articles_response)
+       
         articles_results = None
 
         
