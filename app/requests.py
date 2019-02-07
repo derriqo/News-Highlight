@@ -83,6 +83,7 @@ def receive_results(articles_list):
         articles_results: A list of articles objects
     '''
 
+
     articles_results = []
     for articles_item in articles_list:
         
