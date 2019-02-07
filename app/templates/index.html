@@ -1,3 +1,4 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,45 +6,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to News Highlight </title>
+    {% endif %}
 </head>
 <body>
+    {% block content %}
     <h1>{{word}}</h1>
     <div class="row">
         <div class="col-md-03">
             <h3> Business News</h3>
             <ul>
-                {% for i in  business_sources  %}
-                <li><a href="{{i.url}}">{{i.name}}</a></li>
-                {% endfor %}
+                {{macro.displaySourceList(business)}}
             </ul>   
         </div>
         <div class="col-md-03">
             <h3>Technology News</h3>
                 <ul>
-                        {% for t in  technology_sources  %}
-                        <li><a href="{{t.url}}">{{t.name}}</a></li>
-                             {% endfor %}
+                        {{macro.displaySourceList(business)}}
                 </ul>
         </div>
         <div class="col-md-03">
             <h3>Entertaiment News</h3>
                 <ul>
-                        {% for e in  entertainment_sources  %}
-                        <li><a href="{{e.url}}">{{e.name}}</a></li>
-                    {% endfor %}
+                        {{macro.displaySourceList(business)}}}
                 </ul> 
         </div>
         <div class="col-md-03">
                 <h3>Health News</h3>
                     <ul>
-                            {% for f in  health_sources  %}
-                            <li><a href="{{f.url}}">{{f.name}}</a></li>
-                        {% endfor %}
+                            {{macro.displaySourceList(business)}}}
                     </ul> 
             </div>
     </div>
-       
+    {% endblock%}
 </body>
 </html>
 
