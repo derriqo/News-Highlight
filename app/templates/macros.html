@@ -1,11 +1,3 @@
-
-<!-- {% macro displaySourceList(source_list) %}
-
-    {% for source in source_list %}
-        <li>{{ source.title }}</li>
-    {% endfor %}
-
-{% endmacro %}     -->
 {% macro displaySourceList(source_list) %}
     
     {% for source_row in source_list |batch(4)%}

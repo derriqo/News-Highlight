@@ -94,7 +94,8 @@ def receive_results(articles_list):
         publishedAt = articles_item.get('publishedAt')
         urlToImage = articles_item.get('urlToImage')
         url = articles_item.get('url')
+        description = articles_item.get('description')
         
-        articles_object = Articles(author,publishedAt,urlToImage,url)
+        articles_object = Articles(author,publishedAt,urlToImage,url,description)
         articles_results.append(articles_object)
     return articles_results
